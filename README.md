@@ -1,14 +1,14 @@
 
 ## How to Build and Run
 
-Download the sorcecode from the git / clone from the git repository
+### Download the sorcecode from the git / clone from the git repository
 - wget https://github.com/sshamsudheen/laravel-api/archive/master.zip.
 
-Extraxt the zip file
+### Extraxt the zip file
 
 - unzip master.zip
 
-Configure the .env file
+### Configure the .env file
 
 - cd laravel-api-master/ ; cp .env_example .env
 - modify your database details in .env
@@ -21,7 +21,7 @@ DB_USERNAME=***
 DB_PASSWORD=***
 
 
-Run composer
+### Run composer
 
 - composer install
 - php artisan migrate;
