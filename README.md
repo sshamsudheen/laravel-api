@@ -62,6 +62,6 @@ It should be possible to retrieve a list of IDs of all the products in the same 
 
 ## Tools used
 
-- Laravel 5.7
+- php 7.1.16 + Laravel 5.7
 - mysql
 - tested in MacOs/Ubuntu16.04
