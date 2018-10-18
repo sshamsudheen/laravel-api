@@ -11,7 +11,15 @@ Extraxt the zip file
 Configure the .env file
 
 - cd laravel-api-master/ ; cp .env_example .env
-- provide your database details
+- modify your database details in .env
+
+DB_CONNECTION=mysql
+DB_HOST=127.0.0.1
+DB_PORT=3306
+DB_DATABASE=***
+DB_USERNAME=***
+DB_PASSWORD=***
+
 
 Run composer
 
