@@ -25,25 +25,26 @@ The above command will return
 Laravel development server started: <http://127.0.0.1:8000>
 
 ### Data import
-* The API should provide a PUT or POST endpoint to add new products from a JSON encoded list.
+The API should provide a PUT or POST endpoint to add new products from a JSON encoded list.
 
 - curl -X POST http://localhost:8000/api/products   -H "Accept: application/json"   -H "Content-Type: application/json"   -T 'products.json';
 
-* A sample list of products is available in the `products.json` file.
+ A sample list of products is available in the `products.json` file.
 
 ### Products
-* The API should have an endpoint returning a list of all products.
+The API should have an endpoint returning a list of all products.
 
 - http://localhost:8000/api/products (or) 
 - curl -X GET http://localhost:1234/api/products   -H "Accept: application/json"   -H "Content-Type: application/json" 
 
-* The API should provide an endpoint returning detailed product information given a certain product ID.
+The API should provide an endpoint returning detailed product information given a certain product ID.
+
 - curl -X GET http://localhost:1234/api/products/3   -H "Accept: application/json"   -H "Content-Type: application/json"  (or)
 - http://localhost:8000/api/products/3
 
 {"id":3,"collection_id":2,"image":"dw-petite-28-melrose-white-cat.png","name":"Classic Petite Melrose 28mm (White)","sku":"C99900219","created_at":"2018-10-18 11:53:34","updated_at":"2018-10-18 11:53:34","collection":{"id":2,"collection":"classic-petite","size":28,"created_at":"2018-10-18 11:53:34","updated_at":"2018-10-18 11:53:34"}}
 
-* It should be possible to retrieve a list of IDs of all the products of the same size
+It should be possible to retrieve a list of IDs of all the products of the same size
 
  - curl -X GET http://localhost:1234/api/products/size/38   -H "Accept: application/json"   -H "Content-Type: application/json"
 or
@@ -51,11 +52,11 @@ or
 - http://localhost:1234/api/products/size/28
 
 ### Collections
-* The API should have an endpoint returning a list of all collections
+The API should have an endpoint returning a list of all collections
 - http://localhost:8000/api/collections (or)
 - curl -X GET http://localhost:1234/api/collections   -H "Accept: application/json"   -H "Content-Type: application/json"  
 
-* It should be possible to retrieve a list of IDs of all the products in the same collection
+It should be possible to retrieve a list of IDs of all the products in the same collection
 - http://localhost:1234/api/collections/3 (or)
 - curl -X GET http://localhost:1234/api/collections/3   -H "Accept: application/json"   -H "Content-Type: application/json" 
 
