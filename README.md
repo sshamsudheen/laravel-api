@@ -33,6 +33,7 @@ The above command will return
 Laravel development server started: <http://127.0.0.1:8000>
 
 ### Data import
+
 The API should provide a PUT or POST endpoint to add new products from a JSON encoded list.
 
 - curl -X POST http://localhost:8000/api/products   -H "Accept: application/json"   -H "Content-Type: application/json"   -T 'products.json';
