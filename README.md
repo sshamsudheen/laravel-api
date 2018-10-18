@@ -1,25 +1,63 @@
-<p align="center"><img src="https://laravel.com/assets/img/components/logo-laravel.svg"></p>
 
-<p align="center">
-<a href="https://travis-ci.org/laravel/framework"><img src="https://travis-ci.org/laravel/framework.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://poser.pugx.org/laravel/framework/d/total.svg" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://poser.pugx.org/laravel/framework/v/stable.svg" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://poser.pugx.org/laravel/framework/license.svg" alt="License"></a>
-</p>
+## How to Build and Run
 
-## About Laravel
+Download the sorcecode from the git / clone from the git repository
+- wget https://github.com/sshamsudheen/laravel-api/archive/master.zip.
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel attempts to take the pain out of development by easing common tasks used in the majority of web projects, such as:
+Extraxt the zip file
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+- unzip master.zip
 
-Laravel is accessible, yet powerful, providing tools needed for large, robust applications.
+Configure the .env file
+
+- cd laravel-api-master/ ; cp .env_example .env
+- provide your database details
+
+Run composer
+
+- composer install
+- php artisan migrate;
+- php artisan key:generate
+- start the fpm server  by running 
+- ~/laravel-api-master$ sudo php artisan serve 
+
+The above command will return 
+Laravel development server started: <http://127.0.0.1:8000>
+
+### Data import
+* The API should provide a PUT or POST endpoint to add new products from a JSON encoded list.
+
+- curl -X POST http://localhost:8000/api/products   -H "Accept: application/json"   -H "Content-Type: application/json"   -T 'products.json';
+
+* A sample list of products is available in the `products.json` file.
+
+### Products
+* The API should have an endpoint returning a list of all products.
+
+- http://localhost:8000/api/products (or) 
+- curl -X GET http://localhost:1234/api/products   -H "Accept: application/json"   -H "Content-Type: application/json" 
+
+* The API should provide an endpoint returning detailed product information given a certain product ID.
+- curl -X GET http://localhost:1234/api/products/3   -H "Accept: application/json"   -H "Content-Type: application/json"  (or)
+- http://localhost:8000/api/products/3
+
+{"id":3,"collection_id":2,"image":"dw-petite-28-melrose-white-cat.png","name":"Classic Petite Melrose 28mm (White)","sku":"C99900219","created_at":"2018-10-18 11:53:34","updated_at":"2018-10-18 11:53:34","collection":{"id":2,"collection":"classic-petite","size":28,"created_at":"2018-10-18 11:53:34","updated_at":"2018-10-18 11:53:34"}}
+
+* It should be possible to retrieve a list of IDs of all the products of the same size
+
+ - curl -X GET http://localhost:1234/api/products/size/38   -H "Accept: application/json"   -H "Content-Type: application/json"
+or
+
+- http://localhost:1234/api/products/size/28
+
+### Collections
+* The API should have an endpoint returning a list of all collections
+- http://localhost:8000/api/collections (or)
+- curl -X GET http://localhost:1234/api/collections   -H "Accept: application/json"   -H "Content-Type: application/json"  
+
+* It should be possible to retrieve a list of IDs of all the products in the same collection
+- http://localhost:1234/api/collections/3 (or)
+- curl -X GET http://localhost:1234/api/collections/3   -H "Accept: application/json"   -H "Content-Type: application/json" 
 
 ## Learning Laravel
 
