@@ -13,6 +13,8 @@
 - cd laravel-api-master/ ; cp .env_example .env
 - modify your database details in .env
 
+Create the database and modify the below information in .env
+
 DB_CONNECTION=mysql
 DB_HOST=127.0.0.1
 DB_PORT=3306
