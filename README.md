@@ -1,5 +1,4 @@
-
-## How to Build and Run
+## How to Build and Run 
 
 ### Download the sorcecode from the git / clone from the git repository
 - wget https://github.com/sshamsudheen/laravel-api/archive/master.zip.
@@ -34,10 +33,10 @@ DB_PASSWORD=***
 - composer install
 - php artisan migrate;
 - php artisan key:generate
-- start the fpm server  by running 
-- ~/laravel-api-master$ sudo php artisan serve 
+- start the fpm server  by running
+- ~/laravel-api-master$ sudo php artisan serve
 
-The above command will return 
+The above command will return
 Laravel development server started: <http://127.0.0.1:8000>
 
 ### Data import
@@ -51,8 +50,8 @@ The API should provide a PUT or POST endpoint to add new products from a JSON en
 ### Products
 The API should have an endpoint returning a list of all products.
 
-- http://localhost:8000/api/products (or) 
-- curl -X GET http://localhost:8000/api/products   -H "Accept: application/json"   -H "Content-Type: application/json" 
+- http://localhost:8000/api/products (or)
+- curl -X GET http://localhost:8000/api/products   -H "Accept: application/json"   -H "Content-Type: application/json"
 
 The API should provide an endpoint returning detailed product information given a certain product ID.
 
@@ -75,7 +74,7 @@ The API should have an endpoint returning a list of all collections
 
 It should be possible to retrieve a list of IDs of all the products in the same collection
 - http://localhost:8000/api/collections/3 (or)
-- curl -X GET http://localhost:8000/api/collections/3   -H "Accept: application/json"   -H "Content-Type: application/json" 
+- curl -X GET http://localhost:8000/api/collections/3   -H "Accept: application/json"   -H "Content-Type: application/json"
 
 ## Tools used
 
