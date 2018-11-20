@@ -90,6 +90,7 @@ run the command "cap install" in your laravel project roor directory if not inst
 
 deployment file can be found under config/deploy/
 
+
 modify server detail in staging.rb where you want to deploy your application and execute below command.
 
  - cap staging deploy BRANCH=<branch_name>
