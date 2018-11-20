@@ -87,7 +87,8 @@ It should be possible to retrieve a list of IDs of all the products in the same 
 
 Make sure capistrano installed in your machine
 run the command "cap install" in your laravel project roor directory if not installed before, in this repo it is already added.
-.
+
+"
 ├── Capfile
 ├── config
 │   ├── deploy
@@ -97,6 +98,7 @@ run the command "cap install" in your laravel project roor directory if not inst
 └── lib
     └── capistrano
         └── tasks
+"
 modify server detail in staging.rb where you want to deploy your application and execute below command.
 
  - cap staging deploy BRANCH=<branch_name> 
