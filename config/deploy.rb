@@ -48,6 +48,7 @@ namespace :environment do
               execute "cat /dev/null > #{fetch(:app_path)}/.env"
               execute "echo APP_DEBUG=#{fetch(:app_debug)} >> #{fetch(:app_path)}/.env"
               execute "echo APP_KEY=#{fetch(:app_key)} >> #{fetch(:app_path)}/.env"
+              execute "screen -S LAL -d -m  php /var/www/html/api/current/artisan serve --host=$(hostname)"
         end
     end
 end
