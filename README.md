@@ -1,4 +1,4 @@
-## How to Build and Run 
+## How to Build and Run
 
 ### Download the sorcecode from the git / clone from the git repository
 - wget https://github.com/sshamsudheen/laravel-api/archive/master.zip.
@@ -81,3 +81,22 @@ It should be possible to retrieve a list of IDs of all the products in the same 
 - php 7.1.16 + Laravel 5.7
 - mysql
 - tested in MacOs/Ubuntu16.04
+
+
+## Integrated deployment using capistrano
+
+Make sure capistrano installed in your machine
+run the command "cap install" in your laravel project roor directory if not installed before, in this repo it is already added.
+.
+├── Capfile
+├── config
+│   ├── deploy
+│   │   ├── production.rb
+│   │   └── staging.rb
+│   └── deploy.rb
+└── lib
+    └── capistrano
+        └── tasks
+modify server detail in staging.rb where you want to deploy your application and execute below command.
+
+ - cap staging deploy BRANCH=<branch_name> 
