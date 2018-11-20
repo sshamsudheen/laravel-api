@@ -5,7 +5,9 @@ set :application, "laravel"
 set :repo_url, "git@github.com:sshamsudheen/laravel-api.git"
 
 # Default branch is :master
- ask :branch, `git rev-parse --abbrev-ref HEAD`.chomp
+#ask :branch, `git rev-parse --abbrev-ref HEAD`.chomp
+set :branch, ENV['BRANCH'] || 'master'
+
 
 # Default deploy_to directory is /var/www/my_app_name
  set :deploy_to, "/var/www/html/api"
@@ -56,6 +58,7 @@ namespace :composer do
             within release_path do
                 execute :composer, "install --no-dev"
                 execute :composer, "dumpautoload"
+
             end
         end
     end
