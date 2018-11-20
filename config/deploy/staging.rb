@@ -21,7 +21,7 @@ set :stage, :staging
 # property set. Specify the username and a domain or IP for the server.
 # Don't use `:all`, it's a meta role.
 
-# role :app, %w{deploy@example.com}, my_property: :my_value
+ role :app, %w{34.244.46.207 34.246.162.198}, user: 'ubuntu'
 # role :web, %w{user1@primary.com user2@additional.com}, other_property: :other_value
 # role :db,  %w{deploy@example.com}
 
@@ -53,16 +53,18 @@ set :stage, :staging
 #
 # The server-based syntax can be used to override options:
 # ------------------------------------
- server "34.246.162.198",
-   user: "ubuntu",
-   roles: %w{web app},
-   ssh_options: {
-     user: "ubuntu", # overrides user setting above
-     keys: %w(/home/ubuntu/.ssh/id_rsa),
-     forward_agent: false,
-     auth_methods: %w(publickey password)
+
+
+# server "34.246.162.198",
+#   user: "ubuntu",
+#   roles: %w{web app},
+#   ssh_options: {
+#     user: "ubuntu", # overrides user setting above
+#     keys: %w(/home/ubuntu/.ssh/id_rsa),
+#     forward_agent: false,
+#     auth_methods: %w(publickey password)
      # password: "please use keys"
-   }
+#   }
 
 set :app_path, '/var/www/html/api/current'
 set :app_debug, false
