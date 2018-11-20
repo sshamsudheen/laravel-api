@@ -86,7 +86,8 @@ It should be possible to retrieve a list of IDs of all the products in the same 
 ## Integrated deployment using capistrano
 
 Make sure capistrano installed in your machine
-run the command "cap install" in your laravel project roor directory if not installed before, in this repo it is already added.
+
+Run the command "cap install" in your laravel project root directory if not installed before, in this repo it is already added.
 
 deployment file can be found under config/deploy/
 
