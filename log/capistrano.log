@@ -12082,3 +12082,247 @@ Package manifest generated successfully.
   INFO [90784826] Running screen -S LAL -d -m  php /var/www/html/api/current/artisan serve --host=$(hostname) as ubuntu@34.246.162.198
  DEBUG [90784826] Command: screen -S LAL -d -m  php /var/www/html/api/current/artisan serve --host=$(hostname)
   INFO [1a236337] Finished in 0.235 seconds with exit status 0 (successful).
+  INFO ---------------------------------------------------------------------------
+  INFO START 2018-11-21 13:27:05 +0200 cap staging deploy
+  INFO ---------------------------------------------------------------------------
+  INFO [caf33351] Running /usr/bin/env mkdir -p /tmp as ubuntu@34.246.162.198
+ DEBUG [caf33351] Command: /usr/bin/env mkdir -p /tmp
+  INFO [56a205b6] Finished in 3.392 seconds with exit status 0 (successful).
+ DEBUG Uploading /tmp/git-ssh-laravel-staging-Samsudheen Saludheen.sh 0.0%
+  INFO Uploading /tmp/git-ssh-laravel-staging-Samsudheen Saludheen.sh 100.0%
+  INFO [b182b62e] Running /usr/bin/env chmod 700 /tmp/git-ssh-laravel-staging-Samsudheen\ Saludheen.sh as ubuntu@34.246.162.198
+ DEBUG [b182b62e] Command: /usr/bin/env chmod 700 /tmp/git-ssh-laravel-staging-Samsudheen\ Saludheen.sh
+  INFO [be2c9131] Finished in 0.223 seconds with exit status 0 (successful).
+  INFO [62e800e3] Running /usr/bin/env git ls-remote git@github.com:sshamsudheen/laravel-api.git HEAD as ubuntu@34.246.162.198
+ DEBUG [62e800e3] Command: ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-laravel-staging-Samsudheen Saludheen.sh" ; /usr/bin/env git ls-remote git@github.com:sshamsudheen/laravel-api.git HEAD )
+ DEBUG [3407b93d] 	08f6c97ea5d798493d44517485cfbaed8f90abf6	HEAD
+  INFO [3407b93d] Finished in 1.684 seconds with exit status 0 (successful).
+  INFO [22ce5233] Running /usr/bin/env mkdir -p /var/www/html/api/shared /var/www/html/api/releases as ubuntu@34.246.162.198
+ DEBUG [22ce5233] Command: /usr/bin/env mkdir -p /var/www/html/api/shared /var/www/html/api/releases
+  INFO [bb99cca4] Finished in 0.268 seconds with exit status 0 (successful).
+ DEBUG [9ceb7ff2] Running [ -f /var/www/html/api/current/REVISION ] as ubuntu@34.246.162.198
+ DEBUG [9ceb7ff2] Command: [ -f /var/www/html/api/current/REVISION ]
+ DEBUG [a31e1cc0] Finished in 0.242 seconds with exit status 0 (successful).
+ DEBUG [afc1b810] Running /usr/bin/env cat /var/www/html/api/current/REVISION 2>/dev/null as ubuntu@34.246.162.198
+ DEBUG [afc1b810] Command: /usr/bin/env cat /var/www/html/api/current/REVISION 2>/dev/null
+ DEBUG [38f8c91c] 	a819895d9870fda0265e3fa9e110eb8d117be7e4
+ DEBUG [38f8c91c] Finished in 0.223 seconds with exit status 0 (successful).
+ DEBUG [35db3e7b] Running [ -f /var/www/html/api/repo/HEAD ] as ubuntu@34.246.162.198
+ DEBUG [35db3e7b] Command: [ -f /var/www/html/api/repo/HEAD ]
+ DEBUG [84f79ed5] Finished in 0.225 seconds with exit status 0 (successful).
+  INFO The repository mirror is at /var/www/html/api/repo
+ DEBUG [e98b1075] Running if test ! -d /var/www/html/api/repo; then echo "Directory does not exist '/var/www/html/api/repo'" 1>&2; false; fi as ubuntu@34.246.162.198
+ DEBUG [e98b1075] Command: if test ! -d /var/www/html/api/repo; then echo "Directory does not exist '/var/www/html/api/repo'" 1>&2; false; fi
+ DEBUG [b52904ee] Finished in 0.219 seconds with exit status 0 (successful).
+  INFO [69ab093e] Running /usr/bin/env git remote set-url origin git@github.com:sshamsudheen/laravel-api.git as ubuntu@34.246.162.198
+ DEBUG [69ab093e] Command: cd /var/www/html/api/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-laravel-staging-Samsudheen Saludheen.sh" ; /usr/bin/env git remote set-url origin git@github.com:sshamsudheen/laravel-api.git )
+  INFO [e8654d0b] Finished in 0.225 seconds with exit status 0 (successful).
+  INFO [d08a57c4] Running /usr/bin/env git remote update --prune as ubuntu@34.246.162.198
+ DEBUG [d08a57c4] Command: cd /var/www/html/api/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-laravel-staging-Samsudheen Saludheen.sh" ; /usr/bin/env git remote update --prune )
+ DEBUG [ae8332b9] 	Fetching origin
+ DEBUG [ae8332b9] 	From github.com:sshamsudheen/laravel-api
+   a819895..08f6c97  master     -> master
+  INFO [ae8332b9] Finished in 2.173 seconds with exit status 0 (successful).
+ DEBUG [3cfe3b46] Running if test ! -d /var/www/html/api/repo; then echo "Directory does not exist '/var/www/html/api/repo'" 1>&2; false; fi as ubuntu@34.246.162.198
+ DEBUG [3cfe3b46] Command: if test ! -d /var/www/html/api/repo; then echo "Directory does not exist '/var/www/html/api/repo'" 1>&2; false; fi
+ DEBUG [0a780232] Finished in 0.145 seconds with exit status 0 (successful).
+  INFO [ac8fdf98] Running /usr/bin/env mkdir -p /var/www/html/api/releases/20181121112712 as ubuntu@34.246.162.198
+ DEBUG [ac8fdf98] Command: cd /var/www/html/api/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-laravel-staging-Samsudheen Saludheen.sh" ; /usr/bin/env mkdir -p /var/www/html/api/releases/20181121112712 )
+  INFO [05b5d5ca] Finished in 0.231 seconds with exit status 0 (successful).
+  INFO [585a4501] Running /usr/bin/env git archive master | /usr/bin/env tar -x -f - -C /var/www/html/api/releases/20181121112712 as ubuntu@34.246.162.198
+ DEBUG [585a4501] Command: cd /var/www/html/api/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-laravel-staging-Samsudheen Saludheen.sh" ; /usr/bin/env git archive master | /usr/bin/env tar -x -f - -C /var/www/html/api/releases/20181121112712 )
+  INFO [85ef0f30] Finished in 0.241 seconds with exit status 0 (successful).
+ DEBUG [44e81c5c] Running if test ! -d /var/www/html/api/repo; then echo "Directory does not exist '/var/www/html/api/repo'" 1>&2; false; fi as ubuntu@34.246.162.198
+ DEBUG [44e81c5c] Command: if test ! -d /var/www/html/api/repo; then echo "Directory does not exist '/var/www/html/api/repo'" 1>&2; false; fi
+ DEBUG [3576dda4] Finished in 0.224 seconds with exit status 0 (successful).
+ DEBUG [32c1f9b5] Running /usr/bin/env git rev-list --max-count=1 master as ubuntu@34.246.162.198
+ DEBUG [32c1f9b5] Command: cd /var/www/html/api/repo && ( export GIT_ASKPASS="/bin/echo" GIT_SSH="/tmp/git-ssh-laravel-staging-Samsudheen Saludheen.sh" ; /usr/bin/env git rev-list --max-count=1 master )
+ DEBUG [a6a7e399] 	08f6c97ea5d798493d44517485cfbaed8f90abf6
+ DEBUG [a6a7e399] Finished in 0.223 seconds with exit status 0 (successful).
+ DEBUG [2766a844] Running if test ! -d /var/www/html/api/releases/20181121112712; then echo "Directory does not exist '/var/www/html/api/releases/20181121112712'" 1>&2; false; fi as ubuntu@34.246.162.198
+ DEBUG [2766a844] Command: if test ! -d /var/www/html/api/releases/20181121112712; then echo "Directory does not exist '/var/www/html/api/releases/20181121112712'" 1>&2; false; fi
+ DEBUG [ce93be07] Finished in 0.223 seconds with exit status 0 (successful).
+  INFO [4caccae2] Running /usr/bin/env echo "08f6c97ea5d798493d44517485cfbaed8f90abf6" > REVISION as ubuntu@34.246.162.198
+ DEBUG [4caccae2] Command: cd /var/www/html/api/releases/20181121112712 && /usr/bin/env echo "08f6c97ea5d798493d44517485cfbaed8f90abf6" > REVISION
+  INFO [7d7b4412] Finished in 0.223 seconds with exit status 0 (successful).
+ DEBUG [2038ec71] Running if test ! -d /var/www/html/api/releases/20181121112712; then echo "Directory does not exist '/var/www/html/api/releases/20181121112712'" 1>&2; false; fi as ubuntu@34.246.162.198
+ DEBUG [2038ec71] Command: if test ! -d /var/www/html/api/releases/20181121112712; then echo "Directory does not exist '/var/www/html/api/releases/20181121112712'" 1>&2; false; fi
+ DEBUG [6d951f1c] Finished in 0.218 seconds with exit status 0 (successful).
+  INFO [70568174] Running /usr/bin/env composer install --no-dev as ubuntu@34.246.162.198
+ DEBUG [70568174] Command: cd /var/www/html/api/releases/20181121112712 && /usr/bin/env composer install --no-dev
+ DEBUG [9767c947] 	Loading composer repositories with package information
+ DEBUG [9767c947] 	
+ DEBUG [9767c947] 	Installing dependencies from lock file
+ DEBUG [9767c947] 	
+ DEBUG [9767c947] 	Package operations: 39 installs, 0 updates, 0 removals
+ DEBUG [9767c947] 	
+ DEBUG [9767c947] 	  - Installing doctrine/inflector (v1.3.0): 
+ DEBUG [9767c947] 	Loading from cache
+ DEBUG [9767c947] 	
+ DEBUG [9767c947] 	  - Installing doctrine/lexer (v1.0.1): Loading from cache
+ DEBUG [9767c947] 	  - Installing dragonmantank/cron-expression (v2.2.0): Loading from cache
+ DEBUG [9767c947] 	  - Installing erusev/parsedown (1.7.1): 
+ DEBUG [9767c947] 	Loading from cache
+ DEBUG [9767c947] 	  - Installing vlucas/phpdotenv (v2.5.1): Loading from cache
+ DEBUG [9767c947] 	  - Installing symfony/css-selector (v4.1.6): Loading from cache
+ DEBUG [9767c947] 	  - Installing tijsverkoyen/css-to-inline-styles (2.2.1): Loading from cache
+ DEBUG [9767c947] 	  - Installing symfony/polyfill-php72 (v1.9.0): Loading from cache
+ DEBUG [9767c947] 	  - Installing symfony/polyfill-mbstring (v1.9.0): Loading from cache
+ DEBUG [9767c947] 	  - Installing symfony/var-dumper (v4.1.6): Loading from cache
+ DEBUG [9767c947] 	  - Installing symfony/routing (v4.1.6): 
+ DEBUG [9767c947] 	Loading from cache
+ DEBUG [9767c947] 	
+ DEBUG [9767c947] 	  - Installing symfony/process (v4.1.6): Loading from cache
+ DEBUG [9767c947] 	  - Installing symfony/polyfill-ctype (v1.9.0): Loading from cache
+ DEBUG [9767c947] 	  - Installing symfony/http-foundation (v4.1.6): Loading from cache
+ DEBUG [9767c947] 	  - Installing symfony/event-dispatcher (v4.1.6): Loading from cache
+ DEBUG [9767c947] 	  - Installing psr/log (1.0.2): Loading from cache
+ DEBUG [9767c947] 	  - Installing symfony/debug (v4.1.6): Loading from cache
+ DEBUG [9767c947] 	  - Installing symfony/http-kernel (v4.1.6): Loading from cache
+ DEBUG [9767c947] 	  - Installing symfony/finder (v4.1.6): Loading from cache
+ DEBUG [9767c947] 	  - Installing symfony/console (v4.1.6): 
+ DEBUG [9767c947] 	Loading from cache
+ DEBUG [9767c947] 	
+ DEBUG [9767c947] 	  - Installing egulias/email-validator (2.1.6): 
+ DEBUG [9767c947] 	Loading from cache
+ DEBUG [9767c947] 	
+ DEBUG [9767c947] 	  - Installing swiftmailer/swiftmailer (v6.1.3): 
+ DEBUG [9767c947] 	Loading from cache
+ DEBUG [9767c947] 	
+ DEBUG [9767c947] 	  - Installing paragonie/random_compat (v9.99.99): 
+ DEBUG [9767c947] 	Loading from cache
+ DEBUG [9767c947] 	
+ DEBUG [9767c947] 	  - Installing ramsey/uuid (3.8.0): 
+ DEBUG [9767c947] 	Loading from cache
+ DEBUG [9767c947] 	
+ DEBUG [9767c947] 	  - Installing psr/simple-cache (1.0.1): 
+ DEBUG [9767c947] 	Loading from cache
+ DEBUG [9767c947] 	
+ DEBUG [9767c947] 	  - Installing psr/container (1.0.0): 
+ DEBUG [9767c947] 	Loading from cache
+ DEBUG [9767c947] 	
+ DEBUG [9767c947] 	  - Installing opis/closure (3.1.1): 
+ DEBUG [9767c947] 	Loading from cache
+ DEBUG [9767c947] 	
+ DEBUG [9767c947] 	  - Installing symfony/translation (v4.1.6): 
+ DEBUG [9767c947] 	Loading from cache
+ DEBUG [9767c947] 	
+ DEBUG [9767c947] 	  - Installing nesbot/carbon (1.34.0): 
+ DEBUG [9767c947] 	Loading from cache
+ DEBUG [9767c947] 	
+ DEBUG [9767c947] 	  - Installing monolog/monolog (1.23.0): 
+ DEBUG [9767c947] 	Loading from cache
+ DEBUG [9767c947] 	
+ DEBUG [9767c947] 	  - Installing league/flysystem (1.0.48): 
+ DEBUG [9767c947] 	Loading from cache
+ DEBUG [9767c947] 	
+ DEBUG [9767c947] 	  - Installing laravel/framework (v5.7.9): 
+ DEBUG [9767c947] 	Loading from cache
+ DEBUG [9767c947] 	
+ DEBUG [9767c947] 	  - Installing fideloper/proxy (4.0.0): 
+ DEBUG [9767c947] 	Loading from cache
+ DEBUG [9767c947] 	
+ DEBUG [9767c947] 	  - Installing jakub-onderka/php-console-color (v0.2): 
+ DEBUG [9767c947] 	Loading from cache
+ DEBUG [9767c947] 	
+ DEBUG [9767c947] 	  - Installing nikic/php-parser (v4.1.0): 
+ DEBUG [9767c947] 	Loading from cache
+ DEBUG [9767c947] 	
+ DEBUG [9767c947] 	  - Installing jakub-onderka/php-console-highlighter (v0.3.2): 
+ DEBUG [9767c947] 	Loading from cache
+ DEBUG [9767c947] 	
+ DEBUG [9767c947] 	  - Installing dnoegel/php-xdg-base-dir (0.1): 
+ DEBUG [9767c947] 	Loading from cache
+ DEBUG [9767c947] 	
+ DEBUG [9767c947] 	  - Installing psy/psysh (v0.9.9): 
+ DEBUG [9767c947] 	Loading from cache
+ DEBUG [9767c947] 	
+ DEBUG [9767c947] 	  - Installing laravel/tinker (v1.0.8): 
+ DEBUG [9767c947] 	Loading from cache
+ DEBUG [9767c947] 	
+ DEBUG [9767c947] 	Generating optimized autoload files
+ DEBUG [9767c947] 	
+ DEBUG [9767c947] 	> Illuminate\Foundation\ComposerScripts::postAutoloadDump
+ DEBUG [9767c947] 	
+ DEBUG [9767c947] 	> @php artisan package:discover
+ DEBUG [9767c947] 	
+ DEBUG [9767c947] 	Discovered Package: fideloper/proxy
+ DEBUG [9767c947] 	
+ DEBUG [9767c947] 	Discovered Package: laravel/tinker
+ DEBUG [9767c947] 	
+ DEBUG [9767c947] 	Discovered Package: nesbot/carbon
+ DEBUG [9767c947] 	
+ DEBUG [9767c947] 	Package manifest generated successfully.
+ DEBUG [9767c947] 	
+  INFO [9767c947] Finished in 1.514 seconds with exit status 0 (successful).
+  INFO [9c62cffc] Running /usr/bin/env composer dumpautoload as ubuntu@34.246.162.198
+ DEBUG [9c62cffc] Command: cd /var/www/html/api/releases/20181121112712 && /usr/bin/env composer dumpautoload
+ DEBUG [94368461] 	Generating optimized autoload files
+ DEBUG [94368461] 	> Illuminate\Foundation\ComposerScripts::postAutoloadDump
+ DEBUG [94368461] 	
+ DEBUG [94368461] 	> @php artisan package:discover
+ DEBUG [94368461] 	
+ DEBUG [94368461] 	Discovered Package: fideloper/proxy
+ DEBUG [94368461] 	
+ DEBUG [94368461] 	Discovered Package: laravel/tinker
+ DEBUG [94368461] 	
+ DEBUG [94368461] 	Discovered Package: nesbot/carbon
+ DEBUG [94368461] 	
+ DEBUG [94368461] 	Package manifest generated successfully.
+ DEBUG [94368461] 	
+  INFO [94368461] Finished in 0.705 seconds with exit status 0 (successful).
+  INFO [28432793] Running /usr/bin/env ln -s /var/www/html/api/releases/20181121112712 /var/www/html/api/releases/current as ubuntu@34.246.162.198
+ DEBUG [28432793] Command: /usr/bin/env ln -s /var/www/html/api/releases/20181121112712 /var/www/html/api/releases/current
+  INFO [a5dc5aef] Finished in 0.217 seconds with exit status 0 (successful).
+  INFO [b226725c] Running /usr/bin/env mv /var/www/html/api/releases/current /var/www/html/api as ubuntu@34.246.162.198
+ DEBUG [b226725c] Command: /usr/bin/env mv /var/www/html/api/releases/current /var/www/html/api
+  INFO [6dfe0de2] Finished in 0.217 seconds with exit status 0 (successful).
+ DEBUG [881cfbf7] Running /usr/bin/env ls -x /var/www/html/api/releases as ubuntu@34.246.162.198
+ DEBUG [881cfbf7] Command: /usr/bin/env ls -x /var/www/html/api/releases
+ DEBUG [3f37424d] 	20181120135451	20181121074749	20181121081359	20181121082411	20181121085312
+20181121112712
+ DEBUG [3f37424d] Finished in 0.220 seconds with exit status 0 (successful).
+  INFO Keeping 5 of 6 deployed releases on 34.246.162.198
+ DEBUG [65ddc078] Running [ -d /var/www/html/api/current ] as ubuntu@34.246.162.198
+ DEBUG [65ddc078] Command: [ -d /var/www/html/api/current ]
+ DEBUG [5c73931d] Finished in 0.220 seconds with exit status 0 (successful).
+ DEBUG [52951fb7] Running /usr/bin/env readlink /var/www/html/api/current as ubuntu@34.246.162.198
+ DEBUG [52951fb7] Command: /usr/bin/env readlink /var/www/html/api/current
+ DEBUG [c5eb3583] 	/var/www/html/api/releases/20181121112712
+ DEBUG [c5eb3583] Finished in 0.219 seconds with exit status 0 (successful).
+  INFO [8c2d188d] Running /usr/bin/env rm -rf /var/www/html/api/releases/20181120135451 as ubuntu@34.246.162.198
+ DEBUG [8c2d188d] Command: /usr/bin/env rm -rf /var/www/html/api/releases/20181120135451
+  INFO [63382e13] Finished in 0.355 seconds with exit status 0 (successful).
+ DEBUG [7f861153] Running if test ! -d /var/www/html/api/releases; then echo "Directory does not exist '/var/www/html/api/releases'" 1>&2; false; fi as ubuntu@34.246.162.198
+ DEBUG [7f861153] Command: if test ! -d /var/www/html/api/releases; then echo "Directory does not exist '/var/www/html/api/releases'" 1>&2; false; fi
+ DEBUG [96602ffb] Finished in 0.219 seconds with exit status 0 (successful).
+  INFO [f4a37a83] Running /usr/bin/env echo "Branch master (at 08f6c97ea5d798493d44517485cfbaed8f90abf6) deployed as release 20181121112712 by Samsudheen Saludheen" >> /var/www/html/api/revisions.log as ubuntu@34.246.162.198
+ DEBUG [f4a37a83] Command: cd /var/www/html/api/releases && /usr/bin/env echo "Branch master (at 08f6c97ea5d798493d44517485cfbaed8f90abf6) deployed as release 20181121112712 by Samsudheen Saludheen" >> /var/www/html/api/revisions.log
+  INFO [e89010fb] Finished in 0.225 seconds with exit status 0 (successful).
+  INFO [3da538a9] Running cat /dev/null > /var/www/html/api/current/.env as ubuntu@34.246.162.198
+ DEBUG [3da538a9] Command: cat /dev/null > /var/www/html/api/current/.env
+  INFO [862b803c] Finished in 0.220 seconds with exit status 0 (successful).
+  INFO [5e6b14e9] Running echo APP_DEBUG=false >> /var/www/html/api/current/.env as ubuntu@34.246.162.198
+ DEBUG [5e6b14e9] Command: echo APP_DEBUG=false >> /var/www/html/api/current/.env
+  INFO [6869a938] Finished in 0.222 seconds with exit status 0 (successful).
+  INFO [b14bb587] Running echo APP_KEY=NrLNIrApophsxQzbm98DGNlnWK1wxxdc >> /var/www/html/api/current/.env as ubuntu@34.246.162.198
+ DEBUG [b14bb587] Command: echo APP_KEY=NrLNIrApophsxQzbm98DGNlnWK1wxxdc >> /var/www/html/api/current/.env
+  INFO [adc907de] Finished in 0.221 seconds with exit status 0 (successful).
+  INFO [c437073d] Running php /var/www/html/api/current/artisan migrate as ubuntu@34.246.162.198
+ DEBUG [c437073d] Command: php /var/www/html/api/current/artisan migrate
+ DEBUG [8ab4d10c] 	**************************************
+ DEBUG [8ab4d10c] 	
+ DEBUG [8ab4d10c] 	*     Application In Production!     *
+ DEBUG [8ab4d10c] 	
+ DEBUG [8ab4d10c] 	**************************************
+ DEBUG [8ab4d10c] 	
+ DEBUG [8ab4d10c] 	
+ DEBUG [8ab4d10c] 	Command Cancelled!
+ DEBUG [8ab4d10c] 	
+  INFO [8ab4d10c] Finished in 0.313 seconds with exit status 0 (successful).
+  INFO [ddc49466] Running screen -r LAL -d -X quit as ubuntu@34.246.162.198
+ DEBUG [ddc49466] Command: screen -r LAL -d -X quit
+  INFO [0263a60b] Finished in 0.224 seconds with exit status 0 (successful).
+  INFO [ce97aa11] Running screen -S LAL -d -m  php /var/www/html/api/current/artisan serve --host=$(hostname) as ubuntu@34.246.162.198
+ DEBUG [ce97aa11] Command: screen -S LAL -d -m  php /var/www/html/api/current/artisan serve --host=$(hostname)
+  INFO [bd0745e1] Finished in 0.219 seconds with exit status 0 (successful).

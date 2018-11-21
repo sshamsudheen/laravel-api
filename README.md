@@ -76,7 +76,7 @@ It should be possible to retrieve a list of IDs of all the products in the same 
 - http://localhost:8000/api/collections/3 (or)
 - curl -X GET http://localhost:8000/api/collections/3   -H "Accept: application/json"   -H "Content-Type: application/json"
 
-## Tools used
+## Technology/Tools used
 
 - php 7.1.16 + Laravel 5.7
 - mysql
