@@ -129,6 +129,18 @@ $ cap install
 ```
 in your laravel project root directory if not installed before, in this repo it is already added.
 
+```sh
+
+├── config
+│   ├── deploy
+│   │   ├── production.rb
+│   │   └── staging.rb
+│   └── deploy.rb
+└── lib
+    └── capistrano
+        └── tasks
+```
+
 deployment file can be found under config/deploy/
 
 
