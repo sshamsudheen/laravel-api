@@ -6,7 +6,7 @@ set :stage, :staging
 # Defines a single server with a list of roles and multiple properties.
 # You can define all roles on a single server, or split them:
 
-#server "34.246.162.198", user: "ubuntu", roles: %w{app db web}, my_property: :my_value
+server "34.246.162.198", user: "ubuntu", roles: %w{app db web}, my_property: :my_value
 
 # server "example.com", user: "deploy", roles: %w{app web}, other_property: :other_value
 # server "db.example.com", user: "deploy", roles: %w{db}
@@ -21,7 +21,8 @@ set :stage, :staging
 # property set. Specify the username and a domain or IP for the server.
 # Don't use `:all`, it's a meta role.
 
- role :app, %w{34.244.46.207 34.246.162.198}, user: 'ubuntu'
+## for deploying multiple servers
+ #role :app, %w{34.244.46.207 34.246.162.198}, user: 'ubuntu'
 # role :web, %w{user1@primary.com user2@additional.com}, other_property: :other_value
 # role :db,  %w{deploy@example.com}
 
