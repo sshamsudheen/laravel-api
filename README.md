@@ -38,7 +38,9 @@ DB_PASSWORD=***
 $ composer install
 $ php artisan migrate;
 $ php artisan key:generate
-$ start the fpm server  by running
+
+start the fpm server  by running
+
 $ ~/laravel-api-master
 $ sudo php artisan serve
 ```
