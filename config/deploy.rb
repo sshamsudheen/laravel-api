@@ -49,8 +49,8 @@ namespace :environment do
               execute "echo APP_DEBUG=#{fetch(:app_debug)} >> #{fetch(:app_path)}/.env"
               execute "echo APP_KEY=#{fetch(:app_key)} >> #{fetch(:app_path)}/.env"
               execute "php /var/www/html/api/current/artisan migrate"
-              execute "screen -r LAL -d -X quit"
-              execute "screen -S LAL -d -m  php /var/www/html/api/current/artisan serve --host=$(hostname)"
+              execute "screen -r LAL -d -X quit" # to check if any existing screen for php-fpm, if so kill those and start again which is written in the next line
+              execute "screen -S LAL -d -m  php /var/www/html/api/current/artisan serve --host=$(hostname)" #this is to run as php-fpm, if apache is configured then this line can be removed
         end
     end
 end
