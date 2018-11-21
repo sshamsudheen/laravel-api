@@ -82,6 +82,21 @@ It should be possible to retrieve a list of IDs of all the products in the same 
 - mysql
 - tested in MacOs/Ubuntu16.04
 
+## Test cases (Browser + Unit tests)
+
+- Unit test cases for Auth functionalities is created ,
+
+```sh
+$ cd <to your project directory>
+$ vendor/bin/phpunit
+```
+
+- Browser test cases for Auth functionalities is created at this moment it supports only chrome browser (since dusk by default use chrome, if you want to enable different borwsers for testing then integrate Selenium),
+
+```sh
+$ cd <to your project directory>
+$ php artisan dusk
+```
 
 ## Integrated deployment using capistrano
 
