@@ -1,7 +1,8 @@
 ## How to Build and Run
 
 ### Download the sorcecode from the git / clone from the git repository
-- wget https://github.com/sshamsudheen/laravel-api/archive/master.zip.
+
+```sh wget https://github.com/sshamsudheen/laravel-api/archive/master.zip. ```
 
 ### Extraxt the zip file
 
