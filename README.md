@@ -24,15 +24,10 @@ Create the database and modify the below information in .env
 
 ```sh
 DB_CONNECTION=mysql
-
 DB_HOST=127.0.0.1
-
 DB_PORT=3306
-
 DB_DATABASE=***
-
 DB_USERNAME=***
-
 DB_PASSWORD=***
 ```
 
@@ -44,7 +39,8 @@ $ composer install
 $ php artisan migrate;
 $ php artisan key:generate
 $ start the fpm server  by running
-$ ~/laravel-api-master$ sudo php artisan serve
+$ ~/laravel-api-master
+$ sudo php artisan serve
 ```
 
 The above command will return
