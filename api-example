@@ -1,0 +1,52 @@
+POST Example:
+============
+
+curl -X POST http://localhost:1234/api/products   -H "Accept: application/json"   -H "Content-Type: application/json"   -T 'products.json';
+
+curl -X POST http://ec2-52-18-6-165.eu-west-1.compute.amazonaws.com:8000/api/products    -H "Accept: application/json"   -H "Content-Type: application/json"   -T 'products.json';
+
+
+
+curl -X POST http://localhost:1234/api/articles \
+ -H "Accept: application/json" \
+ -H "Content-Type: application/json" \
+ -d '{"title": "here comes my new title", "body": "here comes the new body for my new title"}'
+
+
+curl -X POST http://localhost:1234/api/articles  -H "Accept: application/json"  -H "Content-Type: application/json"  -d '[{"title": "here comes my new title 53", "body": "here comes the ne body for my new title 53"}, {"title": "here comes my new title 54", "body": "here comes the new body for my new title 54"}]'
+
+
+ curl -X POST http://localhost:1234/api/articles \
+  -H "Accept: application/json" \
+  -H "Content-Type: application/json" \
+  -F 'data=@products.json'
+
+PUT Example:
+===========
+
+curl -X PUT http://localhost:1234/api/collections/3   -H "Accept: application/json"   -H "Content-Type: application/json"   -d '{"size":"40"}'
+curl -X PUT http://localhost:1234/api/products/3   -H "Accept: application/json"   -H "Content-Type: application/json"   -d '{"image":"40image"}'
+
+
+curl -X PUT http://localhost:1234/api/articles/51 \
+ -H "Accept: application/json" \
+ -H "Content-Type: application/json" \
+ -d '{"title": "here comes my new title 51", "body": "here comes the new body for my new title 51"}'
+
+
+ wget https://github.com/sshamsudheen/laravel-api/archive/master.zip
+   80  ls
+   81  unzip master.zip
+   82  cd laravel-api-master/
+   83  cp .env.example .env
+   84  vim .env
+   85  composer install
+   86  php artisan cache:clear;
+   87  php artisan migrate
+   88  php artisan key:generate
+   89  ifconfig
+   90  hostname
+   91  sudo screen -S api php artisan serve --host=ip-172-31-16-75
+   92  ls
+   93  curl -X POST http://ec2-52-18-6-165.eu-west-1.compute.amazonaws.com:8000/   -H "Accept: application/json"   -H "Content-Type: application/json"   -T 'products.json';
+   94  curl -X POST http://ec2-52-18-6-165.eu-west-1.compute.amazonaws.com:8000/api/products    -H "Accept: application/json"   -H "Content-Type: application/json"   -T 'products.json';
