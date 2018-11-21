@@ -58,7 +58,7 @@ The API should provide a PUT or POST endpoint to add new products from a JSON en
 $ curl -X POST http://localhost:8000/api/products   -H "Accept: application/json"   -H "Content-Type: application/json"   -T 'products.json';
 ```
 
- A sample list of products is available in the `products.json` file.
+ A sample list of products is available in the ` products.json ` file.
 
 ### Products
 The API should have an endpoint returning a list of all products.
@@ -76,7 +76,10 @@ $ curl -X GET http://localhost:8000/api/products/3   -H "Accept: application/jso
 In browser type http://localhost:8000/api/products/3
 ```
 
+```sh
+
 {"id":3,"collection_id":2,"image":"dw-petite-28-melrose-white-cat.png","name":"Classic Petite Melrose 28mm (White)","sku":"C99900219","created_at":"2018-10-18 11:53:34","updated_at":"2018-10-18 11:53:34","collection":{"id":2,"collection":"classic-petite","size":28,"created_at":"2018-10-18 11:53:34","updated_at":"2018-10-18 11:53:34"}}
+```
 
 It should be possible to retrieve a list of IDs of all the products of the same size
 
