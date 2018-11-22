@@ -129,12 +129,12 @@ $ php artisan dusk
 
 Make sure capistrano installed in your machine
 
-To capify your laravel application run the command
+To capify your laravel application run the command in your laravel project root directory if not installed before (in this repo it is already added).
+
 
 ```sh
 $ cap install
 ```
-in your laravel project root directory if not installed before, in this repo it is already added.
 
 ```sh
 
